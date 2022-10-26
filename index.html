@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="codigo.js" type="text/javascript" defer></script>
     <title>Lista de Tareas</title>
 </head>
 <body>
     <div class="list roundBorder">
         <div class="date">
             <div class="dateRight">
-                <div id="dataNumber"></div>
+                <div id="dateNumber"></div>
                     <div>
                         <div id="dateMonth"></div>
                         <div id="dateYear"></div>
                     </div>
                 </div>
-            <div id="dataText"></div>
+            <div id="dateText"></div>
         </div>
         <form onsubmit="addNewTask(event)">
             <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
@@ -27,5 +28,5 @@
         <div id="tasksContainer"></div>
     </div>
 </body>
-<script src="codigo.js"></script>
+
 </html>
