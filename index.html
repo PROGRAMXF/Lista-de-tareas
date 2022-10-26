@@ -7,7 +7,7 @@
     <title>Lista de Tareas</title>
 </head>
 <body>
-    <div class="list rounBorder">
+    <div class="list roundBorder">
         <div class="date">
             <div class="dateRight">
                 <div id="dataNumber"></div>
@@ -19,7 +19,11 @@
             <div id="dataText"></div>
         </div>
         <form onsubmit="addNewTask(event)">
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
+            <button type="submit" class="addTaskButton">+</button>
+            <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks();">Ordenar</button>
         </form>
+        <div id="tasksContainer"></div>
     </div>
 </body>
 </html>
