@@ -42,4 +42,12 @@ const addNewTask = (event) => {
   event.taget.reset();
 };
 
+//creamos la funcion changeTaskState para cuando hacemos click, recibimos el evento de ingreso de la tarea
+const changeTaskState = event =>{
+    event.taget.classList.toogle('done');//en este caso el elemento ingresado accede a la lista y el toogle hace que si no tiene la clase done, se lo agregamos y si la tiene, se la sacamos
+    
+
+
+}
+
 setDate();
