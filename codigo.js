@@ -16,7 +16,7 @@ const setDate = () => {
 };
 
 // evento agragr una nueva tarea:
-const addNewTask = event => {
+const addNewTask = (event) => {
   event.preventDefault(); // esto impide que el form haga un submit y nos quiera llevar a otra pagina
   const { value } = event.target.taskText; //tomamos el valor de taskText del input del formulario
 
@@ -43,22 +43,22 @@ const addNewTask = event => {
 };
 
 //creamos la funcion changeTaskState para cuando hacemos click, recibimos el evento de ingreso de la tarea
-const changeTaskState = event => {
-  event.target.classList.toggle('done'); //en este caso el elemento ingresado accede a la lista y el toogle hace que si no tiene la clase done, se lo agregamos y si la tiene, se la sacamos
+const changeTaskState = (event) => {
+  event.target.classList.toggle("done"); //en este caso el elemento ingresado accede a la lista y el toogle hace que si no tiene la clase done, se lo agregamos y si la tiene, se la sacamos
 };
 //creamos la funcion order para ordenar las tareas:
 const order = () => {
   const done = []; // array de tareas hechas
   const toDo = []; // array de tareas por hacer
-  tasksContainer.childNodes.forEach(el => {
+  tasksContainer.childNodes.forEach((el) => {
     // accedemos a todos los hijos del taskContainer y con el foreach iteramos todos estos elementos. Con "el" accedemos a cada elemento
-    el.classList.contains('done') ? done.push(el) : toDo.push(el) //aca preguntamos si el elemento esta "done" y lo agregamos con push y el elemento
-  })
+    el.classList.contains("done") ? done.push(el) : toDo.push(el); //aca preguntamos si el elemento esta "done" y lo agregamos con push y el elemento
+  });
   return [...toDo, ...done]; //la funcion va a devolver un array donde primero coloca las tareas que estan por hacer y luego las que estan hechas
-}
+};
 const renderOrderedTasks = () => {
   //funcion que llama al boton ordenar
-  order().forEach(el => tasksContainer.appendChild(el)); //aca llamamos a order que nos devuelve el array anterior e iteramos cada elemento del array agegandolos al taskcontainer
-}
+  order().forEach((el) => tasksContainer.appendChild(el)); //aca llamamos a order que nos devuelve el array anterior e iteramos cada elemento del array agegandolos al taskcontainer
+};
 
 setDate();
